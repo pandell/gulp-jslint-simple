@@ -32,7 +32,7 @@ describe(pluginName + ".run", function () {
             }));
     });
 
-    it("fails valid files", function (cb) {
+    it("fails invalid files", function (cb) {
         function assertFile(file) {
             assert(file.jslint);
             assert.strictEqual(file.jslint, file.jshint);
