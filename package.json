@@ -1,0 +1,41 @@
+{
+  "name": "gulp-jslint-simple",
+  "version": "0.0.1",
+  "description": "Run JSLint analysis",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": "pandell/gulp-jslint-simple",
+  "author": {
+    "name": "Pandell Technology",
+    "url": "http://pandell.com/"
+  },
+  "contributors": [
+    {
+      "name": "Milan Gardian",
+      "url": "https://github.com/milang"
+    }
+  ],
+  "keywords": [
+    "gulpplugin",
+    "stream",
+    "lint",
+    "jslint"
+  ],
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "lint": "gulp lint",
+    "start": "gulp watch",
+    "test": "gulp test"
+  },
+  "bugs": {
+    "url": "https://github.com/pandell/gulp-jslint-simple/issues"
+  },
+  "homepage": "https://github.com/pandell/gulp-jslint-simple",
+  "devDependencies": {
+    "gulp": "^3.7.0",
+    "gulp-mocha": "^0.4.0",
+    "mocha": "^1.20.0"
+  }
+}
