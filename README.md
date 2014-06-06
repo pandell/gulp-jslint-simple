@@ -58,7 +58,29 @@ If true, `jslint` property is added even when analysis succeeds. Additionally, `
 
 ### `jslint.report([options])`
 
-TO DO
+Creates a transform stream that expects [Vinyl File](https://github.com/wearefractal/vinyl#file) objects as input. The stream passes each incoming file object to the output unchanged. Each incoming object that contains a file that failed JSLint analysis will be reported using `options.reporter`.
+
+#### `options`
+
+_Type_: Object  
+_Default_: no options
+
+Control report behaviour.
+
+#### `options.reporter`
+
+_Type_: Function  
+_Default_: jslint.report.defaultReporter
+
+Reporter to use to report errors for files that failed JSLint analysis.
+
+#### `options.emitError`
+
+_Type_: Boolean  
+_Default_: false
+
+If true, `jslint.report` will emit an `error` event on its output after reporting errors for the first file that failed JSLint analysis.
+
 
 ### `jslint.report.defaultReporter(results, data, options)`
 
