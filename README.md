@@ -4,7 +4,7 @@
 
 How is this package different from other JSLint runners?
 
-- No dependencies, contains a copy of the latest [JSLINT implementation](https://github.com/douglascrockford/JSLint/blob/master/jslint.js) by [Douglas Crockford](http://www.crockford.com/)
+- No dependencies (other than [gulp](http://gulpjs.com/)), contains a copy of the latest [JSLINT implementation](https://github.com/douglascrockford/JSLint/blob/master/jslint.js) by [Douglas Crockford](http://www.crockford.com/)
 - Compatible with [JSHint reporters](https://www.npmjs.org/search?q=jshint%20reporter)
 
 
