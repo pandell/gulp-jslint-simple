@@ -5,6 +5,7 @@
 * text=auto
 
 # Text files that should be normalized (convert crlf => lf)
+LICENSE       text
 .editorconfig text
 .npmignore    text
 .gitignore    text
