@@ -56,4 +56,13 @@ describe(pluginName + ".run", function () {
             }));
     });
 
+    it("respects options", function (cb) {
+        gulp.src(path.resolve(__dirname, "fixtures/simple.js"))
+            .pipe(jslint.run({ node: true }))
+            .pipe(concat(function (files) {
+                assert.strictEqual(1, files.length);
+                assert(!files[0].jslint);
+                cb();
+            }));
+    });
 });
