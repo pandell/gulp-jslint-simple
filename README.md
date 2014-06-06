@@ -81,6 +81,15 @@ _Default_: false
 
 If true, `jslint.report` will emit an `error` event on its output after reporting errors for the first file that failed JSLint analysis.
 
+#### options.emitErrorAtEnd
+
+_Type_: Boolean  
+_Default_: false
+
+If true, `jslint.report` will emit an `error` event after the input streams has finished supplying files if at least one file failed analysis.
+
+If neither `options.emitError` not `options.emitErrorAtEnd` are set to `true`, no `error` event will be emitted, `jslint.report` stream acts as a simple pass-through transform stream.
+
 
 ### `jslint.report.defaultReporter(results, data, options)`
 

@@ -16,7 +16,7 @@ gulp.task("lint", streamsAsTask(function () {
     return [
         gulp.src([rootFiles, libFiles, testFiles]),
         jslint.run(),
-        jslint.report({ emitError: true })
+        jslint.report({ emitErrorAtEnd: true })
     ];
 }));
 
