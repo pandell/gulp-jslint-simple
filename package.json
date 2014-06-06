@@ -33,6 +33,7 @@
     "url": "https://github.com/pandell/gulp-jslint-simple/issues"
   },
   "homepage": "https://github.com/pandell/gulp-jslint-simple",
+  "readmeFilename": "README.md",
   "devDependencies": {
     "gulp": "^3.7.0",
     "gulp-mocha": "^0.4.0",
