@@ -41,14 +41,14 @@ var jslint = require('gulp-jslint-simple');
 
 Creates a transform stream that expects [Vinyl File](https://github.com/wearefractal/vinyl#file) objects in buffer mode (stream and null-contents modes are not supported) as input. The stream passes each incoming file object to the output unchanged. Each incoming object will be analyzed using latest JSLint. If analysis fails, a property `jslint` will be added to the object. A property `jshint` pointining to `jslint` will also be added for compatiblity with JSHint reporters.
 
-#### `options`
+#### options
 
 _Type_: Object  
 _Default_: no options
 
 Options to pass through to `JSLINT` function. Allows overriding default JSLint flags on a project level (flags can then be overridden again at a file level using `/*jslint*/` comments).
 
-#### `options.includeData`
+#### options.includeData
 
 _Type_: Boolean  
 _Default_: false
@@ -60,21 +60,21 @@ If true, `jslint` property is added even when analysis succeeds. Additionally, `
 
 Creates a transform stream that expects [Vinyl File](https://github.com/wearefractal/vinyl#file) objects as input. The stream passes each incoming file object to the output unchanged. Each incoming object that contains a file that failed JSLint analysis will be reported using `options.reporter`.
 
-#### `options`
+#### options
 
 _Type_: Object  
 _Default_: no options
 
 Control report behaviour.
 
-#### `options.reporter`
+#### options.reporter
 
 _Type_: Function  
 _Default_: jslint.report.defaultReporter
 
 Reporter to use to report errors for files that failed JSLint analysis.
 
-#### `options.emitError`
+#### options.emitError
 
 _Type_: Boolean  
 _Default_: false
