@@ -14,7 +14,7 @@ var pluginName = require("../lib/pluginName");
 
 describe(pluginName + ".report", function () {
 
-    describe("\"error\" event behaviour", function () {
+    describe("\"error\" event", function () {
 
         function reportWith(reportOptions, cb) {
             var log = [];
@@ -67,7 +67,7 @@ describe(pluginName + ".report", function () {
             });
         });
 
-        it("\"emitError\" is stronger than \"emitErrorAtEnd\"", function (cb) {
+        it("\"emitError\" takes precedence over \"emitErrorAtEnd\"", function (cb) {
             reportWith({ emitError: true, emitErrorAtEnd: true }, function (log) {
                 assert.strictEqual(3, log.length);
                 assert(Array.isArray(log[0]));
