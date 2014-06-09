@@ -1,4 +1,5 @@
-/test/
 /.editor*
 /.git*
+/.travis*
 /gulpfile.js
+/test/
