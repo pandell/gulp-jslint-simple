@@ -1,4 +1,4 @@
-# [gulp](http://gulpjs.com/)-[jslint](http://www.jslint.com/)-simple
+# [gulp](http://gulpjs.com/)-[jslint](http://www.jslint.com/)-simple [![Build Status](https://travis-ci.org/pandell/mocha-testdata.svg?branch=master)](https://travis-ci.org/pandell/mocha-testdata) [![devDependency Status](https://david-dm.org/pandell/gulp-jslint-simple/dev-status.svg)](https://david-dm.org/pandell/gulp-jslint-simple#info=devDependencies)
 
 > Run JSLint analysis
 
