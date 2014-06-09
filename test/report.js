@@ -67,6 +67,16 @@ describe(pluginName + ".report", function () {
             });
         });
 
+        it("\"emitError\" is stronger than \"emitErrorAtEnd\"", function (cb) {
+            reportWith({ emitError: true, emitErrorAtEnd: true }, function (log) {
+                assert.strictEqual(3, log.length);
+                assert(Array.isArray(log[0]));
+                assert.strictEqual("error", log[1]);
+                assert.strictEqual("finish", log[2]);
+                return cb();
+            });
+        });
+
     });
 
 });
