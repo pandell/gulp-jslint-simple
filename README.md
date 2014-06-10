@@ -2,14 +2,19 @@
 
 > Run JSLint analysis
 
+[Git repository](https://github.com/pandell/gulp-jslint-simple)
+
+[Changelog](https://github.com/pandell/gulp-jslint-simple/releases)
+
 How is this package different from other JSLint runners?
 
-- No dependencies (other than [gulp](http://gulpjs.com/)), contains a copy of the latest (2014-04-21) [JSLINT implementation](https://github.com/douglascrockford/JSLint/blob/master/jslint.js) by [Douglas Crockford](http://www.crockford.com/)
+- No dependencies (other than [gulp](http://gulpjs.com/))
+    - Contains a copy of the latest (2014-04-21) [JSLint](https://github.com/douglascrockford/JSLint/blob/master/jslint.js) by [Douglas Crockford](http://www.crockford.com/)
 - Compatible with [JSHint reporters](https://www.npmjs.org/search?q=jshint%20reporter)
-- `jslint.report` can emit `error` event:
+- [`jslint.report`](#jslintreportoptions) can emit `error` event:
     - Never (default behaviour)
-    - After analysis of a file has failed (`emitError` option)
-    - After all files have been analysed (`emitErrorAtEnd` option)
+    - After a file has been analysed and errors were found in it ([`emitError`](#optionsemiterror))
+    - After all files have been analysed and errors were found in at least one of them ([`emitErrorAtEnd`](#optionsemiterroratend))
 
 
 ## Install
@@ -27,8 +32,15 @@ var jslint = require('gulp-jslint-simple');
 
 gulp.task('lint', function () {
     gulp.src('*.js')
-        .pipe(jslint.run())
-        .pipe(jslint.report());
+        .pipe(jslint.run({
+            // project-wide JSLint options
+            node: true,
+            vars: true
+        }))
+        .pipe(jslint.report({
+            // example of using a JSHint reporter
+            reporter: require('jshint-stylish').reporter
+        }));
 });
 ```
 
@@ -43,7 +55,7 @@ var jslint = require('gulp-jslint-simple');
 
 ### `jslint.run([options])`
 
-Creates a transform stream that expects [Vinyl File](https://github.com/wearefractal/vinyl#file) objects in buffer mode (stream and null-contents modes are not supported) as input. The stream passes each incoming file object to the output unchanged. Each incoming object will be analyzed using latest JSLint. If analysis fails, a property `jslint` will be added to the object. A property `jshint` pointining to `jslint` will also be added for compatiblity with JSHint reporters.
+Creates a transform stream that expects [Vinyl File](https://github.com/wearefractal/vinyl#file) objects in buffer mode (stream and null-contents modes are not supported) as input. The stream passes each incoming file object to the output unchanged. Each incoming object will be analysed using latest JSLint. If analysis fails, a property `jslint` will be added to the object. A property `jshint` pointing to `jslint` will also be added for compatibility with JSHint reporters.
 
 #### options
 
@@ -83,23 +95,23 @@ Reporter to use to report errors for files that failed JSLint analysis.
 _Type_: Boolean  
 _Default_: false
 
-If true, `jslint.report` will emit an `error` event on its output after reporting errors for the first file that failed JSLint analysis.
+If true, `jslint.report` will emit an `error` event when an incoming file fails JSLint analysis.
 
 #### options.emitErrorAtEnd
 
 _Type_: Boolean  
 _Default_: false
 
-If true, `jslint.report` will emit an `error` event after the input streams has finished supplying files if at least one file failed analysis.
+If true, `jslint.report` will emit an `error` event after the input stream has ended and at least one file failed analysis.
 
-If neither `options.emitError` not `options.emitErrorAtEnd` are set to `true`, no `error` event will be emitted, `jslint.report` stream acts as a simple pass-through transform stream.
+If neither `options.emitError` nor `options.emitErrorAtEnd` are set to `true`, no `error` event will be emitted. `jslint.report` stream then acts as a simple pass-through transform stream.
 
 
 ### `jslint.report.defaultReporter(results, data, options)`
 
-JSHint-reporter-compatible function that prints formatted message for each specified error result. File, line and row specification is printed in format that is recognized by many editors and tools (clicking the file specification in such tools will open the specified file for editing at the specified location). Example output:
+JSHint-reporter-compatible function that prints formatted message for each specified error result. File, line and row specification is printed in a format that is recognized by many editors and tools (clicking the file specification in such tools will open the specified file for editing at the specified location). Example output:
 
-![reporter](https://cloud.githubusercontent.com/assets/42297/3203672/8f139672-ed9f-11e3-8863-859715e8bb40.png)
+![Example default reporter output](https://cloud.githubusercontent.com/assets/42297/3203672/8f139672-ed9f-11e3-8863-859715e8bb40.png)
 
 
 ## Contributing
