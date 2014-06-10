@@ -2,6 +2,10 @@
 
 > Run JSLint analysis
 
+[Git repository](https://github.com/pandell/gulp-jslint-simple)
+
+[Changelog](https://github.com/pandell/gulp-jslint-simple/releases)
+
 How is this package different from other JSLint runners?
 
 - No dependencies (other than [gulp](http://gulpjs.com/))
