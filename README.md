@@ -50,7 +50,7 @@ var jslint = require('gulp-jslint-simple');
 
 ### `jslint.run([options])`
 
-Creates a transform stream that expects [Vinyl File](https://github.com/wearefractal/vinyl#file) objects in buffer mode (stream and null-contents modes are not supported) as input. The stream passes each incoming file object to the output unchanged. Each incoming object will be analyzed using latest JSLint. If analysis fails, a property `jslint` will be added to the object. A property `jshint` pointining to `jslint` will also be added for compatiblity with JSHint reporters.
+Creates a transform stream that expects [Vinyl File](https://github.com/wearefractal/vinyl#file) objects in buffer mode (stream and null-contents modes are not supported) as input. The stream passes each incoming file object to the output unchanged. Each incoming object will be analysed using latest JSLint. If analysis fails, a property `jslint` will be added to the object. A property `jshint` pointing to `jslint` will also be added for compatibility with JSHint reporters.
 
 #### options
 
@@ -106,7 +106,7 @@ If neither `options.emitError` not `options.emitErrorAtEnd` are set to `true`, n
 
 JSHint-reporter-compatible function that prints formatted message for each specified error result. File, line and row specification is printed in format that is recognized by many editors and tools (clicking the file specification in such tools will open the specified file for editing at the specified location). Example output:
 
-![reporter](https://cloud.githubusercontent.com/assets/42297/3203672/8f139672-ed9f-11e3-8863-859715e8bb40.png)
+![Example default reporter output](https://cloud.githubusercontent.com/assets/42297/3203672/8f139672-ed9f-11e3-8863-859715e8bb40.png)
 
 
 ## Contributing
