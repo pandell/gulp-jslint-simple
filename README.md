@@ -4,7 +4,8 @@
 
 How is this package different from other JSLint runners?
 
-- No dependencies (other than [gulp](http://gulpjs.com/)), contains a copy of the latest (2014-04-21) [JSLINT implementation](https://github.com/douglascrockford/JSLint/blob/master/jslint.js) by [Douglas Crockford](http://www.crockford.com/)
+- No dependencies (other than [gulp](http://gulpjs.com/))
+    - Contains a copy of the latest (2014-04-21) [JSLint](https://github.com/douglascrockford/JSLint/blob/master/jslint.js) by [Douglas Crockford](http://www.crockford.com/)
 - Compatible with [JSHint reporters](https://www.npmjs.org/search?q=jshint%20reporter)
 - `jslint.report` can emit `error` event:
     - Never (default behaviour)
