@@ -11,10 +11,10 @@ How is this package different from other JSLint runners?
 - No dependencies (other than [gulp](http://gulpjs.com/))
     - Contains a copy of the latest (2014-04-21) [JSLint](https://github.com/douglascrockford/JSLint/blob/master/jslint.js) by [Douglas Crockford](http://www.crockford.com/)
 - Compatible with [JSHint reporters](https://www.npmjs.org/search?q=jshint%20reporter)
-- `jslint.report` can emit `error` event:
+- [`jslint.report`](#jslintreportoptions) can emit `error` event:
     - Never (default behaviour)
-    - After a file has been analysed and contained errors (`emitError` option)
-    - After all files have been analysed and at least one contained errors (`emitErrorAtEnd` option)
+    - After a file has been analysed and errors were found in it ([`emitError`](#optionsemiterror))
+    - After all files have been analysed and errors were found in at least one of them ([`emitErrorAtEnd`](#optionsemiterroratend))
 
 
 ## Install
@@ -95,16 +95,16 @@ Reporter to use to report errors for files that failed JSLint analysis.
 _Type_: Boolean  
 _Default_: false
 
-If true, `jslint.report` will emit an `error` event on its output after reporting errors for the first file that failed JSLint analysis.
+If true, `jslint.report` will emit an `error` event when an incoming file fails JSLint analysis.
 
 #### options.emitErrorAtEnd
 
 _Type_: Boolean  
 _Default_: false
 
-If true, `jslint.report` will emit an `error` event after the input streams has finished supplying files if at least one file failed analysis.
+If true, `jslint.report` will emit an `error` event after the input stream has ended and at least one file failed analysis.
 
-If neither `options.emitError` not `options.emitErrorAtEnd` are set to `true`, no `error` event will be emitted, `jslint.report` stream acts as a simple pass-through transform stream.
+If neither `options.emitError` nor `options.emitErrorAtEnd` are set to `true`, no `error` event will be emitted. `jslint.report` stream then acts as a simple pass-through transform stream.
 
 
 ### `jslint.report.defaultReporter(results, data, options)`
