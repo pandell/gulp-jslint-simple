@@ -8,8 +8,8 @@ How is this package different from other JSLint runners?
 - Compatible with [JSHint reporters](https://www.npmjs.org/search?q=jshint%20reporter)
 - `jslint.report` can emit `error` event:
     - Never (default behaviour)
-    - After analysis of a file has failed (`emitError` option)
-    - After all files have been analysed (`emitErrorAtEnd` option)
+    - After a file has been analysed and contained errors (`emitError` option)
+    - After all files have been analysed and at least one contained errors (`emitErrorAtEnd` option)
 
 
 ## Install
@@ -27,8 +27,15 @@ var jslint = require('gulp-jslint-simple');
 
 gulp.task('lint', function () {
     gulp.src('*.js')
-        .pipe(jslint.run())
-        .pipe(jslint.report());
+        .pipe(jslint.run({
+            // project-wide JSLint options
+            node: true,
+            vars: true
+        }))
+        .pipe(jslint.report({
+            // example of using a jshint reporter
+            reporter: require('jshint-stylish').reporter
+        }));
 });
 ```
 
