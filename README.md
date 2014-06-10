@@ -109,7 +109,7 @@ If neither `options.emitError` not `options.emitErrorAtEnd` are set to `true`, n
 
 ### `jslint.report.defaultReporter(results, data, options)`
 
-JSHint-reporter-compatible function that prints formatted message for each specified error result. File, line and row specification is printed in format that is recognized by many editors and tools (clicking the file specification in such tools will open the specified file for editing at the specified location). Example output:
+JSHint-reporter-compatible function that prints formatted message for each specified error result. File, line and row specification is printed in a format that is recognized by many editors and tools (clicking the file specification in such tools will open the specified file for editing at the specified location). Example output:
 
 ![Example default reporter output](https://cloud.githubusercontent.com/assets/42297/3203672/8f139672-ed9f-11e3-8863-859715e8bb40.png)
 
