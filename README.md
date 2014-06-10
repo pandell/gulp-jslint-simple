@@ -34,7 +34,7 @@ gulp.task('lint', function () {
             vars: true
         }))
         .pipe(jslint.report({
-            // example of using a jshint reporter
+            // example of using a JSHint reporter
             reporter: require('jshint-stylish').reporter
         }));
 });
