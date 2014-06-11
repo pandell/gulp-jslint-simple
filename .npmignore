@@ -1,5 +1,10 @@
 /.editor*
 /.git*
 /.travis*
+/.npmignore
 /gulpfile.js
 /test/
+
+# from .gitignore
+/node_modules/
+/*.log

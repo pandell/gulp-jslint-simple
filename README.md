@@ -1,4 +1,6 @@
-# [gulp](http://gulpjs.com/)-[jslint](http://www.jslint.com/)-simple [![Build Status](https://travis-ci.org/pandell/gulp-jslint-simple.svg?branch=master)](https://travis-ci.org/pandell/gulp-jslint-simple) [![devDependencies Status](https://david-dm.org/pandell/gulp-jslint-simple/dev-status.svg)](https://david-dm.org/pandell/gulp-jslint-simple#info=devDependencies)
+# [gulp](http://gulpjs.com/)-[jslint](http://www.jslint.com/)-simple
+
+[![Build status](https://travis-ci.org/pandell/gulp-jslint-simple.svg?branch=master)](https://travis-ci.org/pandell/gulp-jslint-simple) [![dependencies status](https://david-dm.org/pandell/gulp-jslint-simple.svg)](https://david-dm.org/pandell/gulp-jslint-simple) [![devDependencies status](https://david-dm.org/pandell/gulp-jslint-simple/dev-status.svg)](https://david-dm.org/pandell/gulp-jslint-simple#info=devDependencies)
 
 > Run JSLint analysis
 
@@ -8,12 +10,16 @@
 
 How is this package different from other JSLint runners?
 
-- No dependencies (other than [gulp](http://gulpjs.com/))
-    - Contains a copy of the latest (2014-04-21) [JSLint](https://github.com/douglascrockford/JSLint/blob/master/jslint.js) by [Douglas Crockford](http://www.crockford.com/)
+- Contains a copy of the latest (2014-04-21) [JSLint](https://github.com/douglascrockford/JSLint/blob/master/jslint.js) by [Douglas Crockford](http://www.crockford.com/)
+
 - Compatible with [JSHint reporters](https://www.npmjs.org/search?q=jshint%20reporter)
+
 - [`jslint.report`](#jslintreportoptions) can emit `error` event:
+
     - Never (default behaviour)
+
     - After a file has been analysed and errors were found in it ([`emitError`](#optionsemiterror))
+
     - After all files have been analysed and errors were found in at least one of them ([`emitErrorAtEnd`](#optionsemiterroratend))
 
 
