@@ -8,12 +8,16 @@
 
 How is this package different from other JSLint runners?
 
-- No dependencies (other than [gulp](http://gulpjs.com/))
-    - Contains a copy of the latest (2014-04-21) [JSLint](https://github.com/douglascrockford/JSLint/blob/master/jslint.js) by [Douglas Crockford](http://www.crockford.com/)
+- Contains a copy of the latest (2014-04-21) [JSLint](https://github.com/douglascrockford/JSLint/blob/master/jslint.js) by [Douglas Crockford](http://www.crockford.com/)
+
 - Compatible with [JSHint reporters](https://www.npmjs.org/search?q=jshint%20reporter)
+
 - [`jslint.report`](#jslintreportoptions) can emit `error` event:
+
     - Never (default behaviour)
+
     - After a file has been analysed and errors were found in it ([`emitError`](#optionsemiterror))
+
     - After all files have been analysed and errors were found in at least one of them ([`emitErrorAtEnd`](#optionsemiterroratend))
 
 
