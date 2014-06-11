@@ -1,6 +1,6 @@
 # [gulp](http://gulpjs.com/)-[jslint](http://www.jslint.com/)-simple
 
-[![Build status](https://travis-ci.org/pandell/gulp-jslint-simple.svg?branch=master)](https://travis-ci.org/pandell/gulp-jslint-simple) [![dependencies status](https://david-dm.org/pandell/gulp-jslint-simple.svg)](https://david-dm.org/pandell/gulp-jslint-simple) [![devDependencies status](https://david-dm.org/pandell/gulp-jslint-simple/dev-status.svg)](https://david-dm.org/pandell/gulp-jslint-simple#info=devDependencies)
+[![Build status](https://travis-ci.org/pandell/gulp-jslint-simple.svg?branch=master)](https://travis-ci.org/pandell/gulp-jslint-simple) [!["dependencies" status](https://david-dm.org/pandell/gulp-jslint-simple.svg)](https://david-dm.org/pandell/gulp-jslint-simple) [!["devDependencies" status](https://david-dm.org/pandell/gulp-jslint-simple/dev-status.svg)](https://david-dm.org/pandell/gulp-jslint-simple#info=devDependencies)
 
 > Run JSLint analysis
 
