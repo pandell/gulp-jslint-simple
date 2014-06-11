@@ -3,16 +3,18 @@
 "use strict";
 
 var gulp = require("gulp");
-var jslint = require("./");
 var mocha = require("gulp-mocha");
+var taskFromStreams = require("gulp-taskfromstreams");
+
 var monitorCtrlC = require("./lib/monitorCtrlC");
-var streamsAsTask = require("./lib/streamsAsTask");
+
+var jslint = require("./");
 
 var rootFiles = "*.js*";
 var libFiles = "lib/*.js";
 var testFiles = "test/*.js";
 
-gulp.task("lint", streamsAsTask(function () {
+gulp.task("lint", taskFromStreams(function () {
     return [
         gulp.src([rootFiles, libFiles, testFiles]),
         jslint.run(),
@@ -20,7 +22,7 @@ gulp.task("lint", streamsAsTask(function () {
     ];
 }));
 
-gulp.task("test", ["lint"], streamsAsTask(function () {
+gulp.task("test", ["lint"], taskFromStreams(function () {
     return [
         gulp.src(testFiles),
         mocha({ reporter: "spec" })
