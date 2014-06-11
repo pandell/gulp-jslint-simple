@@ -34,6 +34,12 @@
   },
   "homepage": "https://github.com/pandell/gulp-jslint-simple",
   "readmeFilename": "README.md",
+  "dependencies": {
+    "chalk": "^0.4",
+    "gulp-util": "^2.2",
+    "through2": "^0.5",
+    "xtend": "^3.0"
+  },
   "devDependencies": {
     "concat-stream": "^1.4",
     "gulp": "^3.8",
