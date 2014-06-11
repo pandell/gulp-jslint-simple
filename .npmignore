@@ -1,8 +1,6 @@
-/.editor*
-/.git*
-/.travis*
-/.npmignore
+/.*
 /gulpfile.js
+/lib/monitorCtrlC.js
 /test/
 
 # from .gitignore
