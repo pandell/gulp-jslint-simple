@@ -4,9 +4,8 @@
 
 var gulp = require("gulp");
 var mocha = require("gulp-mocha");
+var monitorCtrlC = require("monitorctrlc");
 var taskFromStreams = require("gulp-taskfromstreams");
-
-var monitorCtrlC = require("./lib/monitorCtrlC");
 
 var jslint = require("./");
 
