@@ -1,6 +1,5 @@
 /.*
 /gulpfile.js
-/lib/monitorCtrlC.js
 /test/
 
 # from .gitignore
