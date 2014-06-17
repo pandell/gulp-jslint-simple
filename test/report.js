@@ -51,6 +51,21 @@ describe(pluginName + ".report", function () {
                 }));
         });
 
+        it("uses changed default reporter", function (cb) {
+            jslint.report.defaultReporter = function (results) {
+                results.changedDefaultReporter = true;
+            };
+
+            gulp.src(path.resolve(__dirname, "fixtures/bad.js"))
+                .pipe(jslint.run())
+                .pipe(jslint.report())
+                .pipe(concat(function (files) {
+                    assert.strictEqual(1, files.length);
+                    assert(files[0].jslint.results.changedDefaultReporter);
+                    return cb();
+                }));
+        });
+
     });
 
     describe("\"error\" event", function () {
