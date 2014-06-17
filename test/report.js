@@ -6,6 +6,7 @@
 var assert = require("assert");
 var path = require("path");
 
+var concat = require("concat-stream");
 var gulp = require("gulp");
 
 var jslint = require("../");
@@ -13,6 +14,44 @@ var pluginName = require("../lib/pluginName");
 
 
 describe(pluginName + ".report", function () {
+
+    describe("reporter spec", function () {
+
+        it("rejects invalid values", function () {
+            assert.throws(function () {
+                jslint.report({ reporter: 1 });
+            }, "Invalid reporter");
+        });
+
+        it("accepts functions", function (cb) {
+            gulp.src(path.resolve(__dirname, "fixtures/bad.js"))
+                .pipe(jslint.run())
+                .pipe(jslint.report({
+                    reporter: function (results) {
+                        results.customFn = true;
+                    }
+                }))
+                .pipe(concat(function (files) {
+                    assert.strictEqual(1, files.length);
+                    assert(files[0].jslint.results.customFn);
+                    return cb();
+                }));
+        });
+
+        it("accepts strings", function (cb) {
+            gulp.src(path.resolve(__dirname, "fixtures/bad.js"))
+                .pipe(jslint.run())
+                .pipe(jslint.report({
+                    reporter: "../test/customReporter"
+                }))
+                .pipe(concat(function (files) {
+                    assert.strictEqual(1, files.length);
+                    assert(files[0].jslint.results.customReporter);
+                    return cb();
+                }));
+        });
+
+    });
 
     describe("\"error\" event", function () {
 
