@@ -22,7 +22,7 @@
     "jslint"
   ],
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=0.8.0"
   },
   "scripts": {
     "lint": "gulp lint",
@@ -43,9 +43,10 @@
   "devDependencies": {
     "concat-stream": "^1.4",
     "gulp": "^3.8",
-    "gulp-mocha": "^0.4",
-    "gulp-taskfromstreams": "^0.0",
+    "gulp-jshint": "^1.6",
+    "gulp-mocha": "0.*",
+    "gulp-taskfromstreams": "0.*",
     "gulp-util": "^2.2",
-    "monitorctrlc": "^0.0"
+    "monitorctrlc": "0.*"
   }
 }
