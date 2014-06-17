@@ -1,5 +1,5 @@
 /*jslint node: true, vars: true, nomen: true */
-/*global describe: true, it: true */
+/*global describe: true, it: true, beforeEach: true, afterEach: true */
 
 "use strict";
 
@@ -16,6 +16,16 @@ var pluginName = require("../lib/pluginName");
 describe(pluginName + ".report", function () {
 
     describe("reporter spec", function () {
+
+        var defaultReporter;
+
+        beforeEach(function () {
+            defaultReporter = jslint.report.defaultReporter;
+        });
+
+        afterEach(function () {
+            jslint.report.defaultReporter = defaultReporter;
+        });
 
         it("rejects invalid values", function () {
             assert.throws(function () {
