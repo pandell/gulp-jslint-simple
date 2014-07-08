@@ -1,6 +1,6 @@
 {
   "name": "gulp-jslint-simple",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Run JSLint analysis",
   "license": "MIT",
   "main": "index.js",
@@ -25,6 +25,7 @@
     "node": ">=0.8.0"
   },
   "scripts": {
+    "clobber": "rimraf node_modules npm-debug.log",
     "lint": "gulp lint",
     "start": "gulp watch",
     "test": "gulp test"
@@ -35,7 +36,7 @@
   "homepage": "https://github.com/pandell/gulp-jslint-simple",
   "readmeFilename": "README.md",
   "dependencies": {
-    "chalk": "^0.4",
+    "chalk": "^0.5",
     "gulp-util": "^2.2",
     "through2": "^0.5",
     "xtend": "^3.0"
