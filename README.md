@@ -10,7 +10,7 @@
 
 How is this package different from other JSLint runners?
 
-- Contains a copy of the latest (2014-07-07) [JSLint](https://github.com/douglascrockford/JSLint/blob/master/jslint.js) by [Douglas Crockford](http://www.crockford.com/)
+- Contains a copy of the latest (2014-07-08) [JSLint](https://github.com/douglascrockford/JSLint/blob/master/jslint.js) by [Douglas Crockford](http://www.crockford.com/)
 
 - Compatible with [JSHint reporters](https://www.npmjs.org/search?q=jshint%20reporter)
 
