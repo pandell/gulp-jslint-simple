@@ -1,6 +1,6 @@
 {
   "name": "gulp-jslint-simple",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Run JSLint analysis",
   "license": "MIT",
   "main": "index.js",
@@ -37,7 +37,7 @@
   "readmeFilename": "README.md",
   "dependencies": {
     "chalk": "^0.5",
-    "gulp-util": "^2.2",
+    "gulp-util": "^3.0",
     "through2": "^0.5",
     "xtend": "^3.0"
   },
@@ -47,7 +47,6 @@
     "gulp-jshint": "^1.6",
     "gulp-mocha": "0.*",
     "gulp-taskfromstreams": "0.*",
-    "gulp-util": "^2.2",
     "monitorctrlc": "0.*"
   }
 }
