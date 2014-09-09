@@ -38,15 +38,15 @@
   "dependencies": {
     "chalk": "^0.5",
     "gulp-util": "^3.0",
-    "through2": "^0.5",
-    "xtend": "^3.0"
+    "through2": "^0.6",
+    "xtend": "^4.0"
   },
   "devDependencies": {
     "concat-stream": "^1.4",
     "gulp": "^3.8",
     "gulp-jshint": "^1.6",
-    "gulp-mocha": "0.*",
-    "gulp-taskfromstreams": "0.*",
-    "monitorctrlc": "0.*"
+    "gulp-mocha": "^1.0",
+    "gulp-taskfromstreams": "^1.0",
+    "monitorctrlc": "^1.0"
   }
 }
